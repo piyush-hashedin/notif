@@ -35,6 +35,7 @@
         console.log(Notification.permission);   
 
         if(Notification.permission === "granted"){
+console.log(1);   
 
             showNotification();
 
@@ -43,6 +44,7 @@
             Notification.requestPermission().then(permission => {
 
                 if(permission === "granted"){
+console.log(2);   
 
                     showNotification();
 
