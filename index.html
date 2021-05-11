@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    
+
+    <script>
+
+
+
+        function showNotification(){
+
+            const notification = new Notification("New mmessage from C2C", {
+
+                body: "Hello, user. Hope u have a good day"
+
+            });
+
+        }
+
+        console.log(Notification.permission);   
+
+        if(Notification.permission === "granted"){
+
+            showNotification();
+
+        }else if (Notification.permission != "denied"){
+
+            Notification.requestPermission().then(permission => {
+
+                if(permission === "granted"){
+
+                    showNotification();
+
+                }  
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
